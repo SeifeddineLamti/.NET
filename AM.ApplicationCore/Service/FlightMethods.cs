@@ -15,15 +15,21 @@ namespace AM.ApplicationCore.Service
     
         public List<DateTime> GetFlightDate(string destination)
         {
-            List<DateTime> dates = new List<DateTime>();
-            foreach (Flight f in flights)
-            {
-                if (f.Destination == destination)
-                {
-                    dates.Add(f.FlightDate);
-                }
-            }
-            return dates;
+            //List<DateTime> dates = new List<DateTime>();
+            //foreach (Flight f in flights)
+            //{
+            //    if (f.Destination == destination)
+            //    {
+            //        dates.Add(f.FlightDate);
+            //    }
+            //}
+            //return dates;
+
+
+            var query = from f in flights
+                        where f.Destination == destination
+                        select f.FlightDate;
+            return query.ToList();
         }
 
         public void GetFlights(string filterType, string filterValue)
