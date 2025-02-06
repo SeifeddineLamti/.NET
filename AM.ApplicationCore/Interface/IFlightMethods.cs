@@ -8,5 +8,6 @@ namespace AM.ApplicationCore.Interface
 {
     public interface IFlightMethods
     {
+        List<DateTime> GetFlightDate(string destination);
     }
 }
