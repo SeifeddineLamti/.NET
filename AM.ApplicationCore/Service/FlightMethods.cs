@@ -27,7 +27,6 @@ namespace AM.ApplicationCore.Service
                 }
             }
         }
-
         public double DurationAverage(string destination)
         {
            var query = from f in flights

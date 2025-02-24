@@ -9,7 +9,7 @@ Plane p= TestData.Airbusplane;
 //    {
 //    Console.WriteLine(date);
 //}
-//cwl
+//cwl + tab
 fm.ShowFlightDetails(p);
 Console.WriteLine(fm.ProgrammedFlightNumber(new DateTime(2022,2,1)));
 Console.WriteLine(fm.DurationAverage("Paris"));
@@ -19,3 +19,10 @@ foreach (var f in fm.SeniorTravellers(TestData.flight1))
 }
 Console.WriteLine("------------------------------");
 fm.DestinationGroupedFlights();
+
+Console.WriteLine("------------------------------");
+Passenger p1 = new Passenger { FirstName = "seif", LastName = "lamti" };
+p1.UpperFullName();
+Console.WriteLine(p1.LastName);
+Console.WriteLine(p1.FirstName);
+  
