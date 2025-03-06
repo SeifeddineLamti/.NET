@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AM.ApplicationCore.Domain;
+using AM.Infrastructure.Configurations;
 using Microsoft.EntityFrameworkCore;
 
 namespace AM.Infrastructure
@@ -24,6 +25,26 @@ namespace AM.Infrastructure
             optionsBuilder.UseSqlServer(@"Data Source=(localdb)\mssqllocaldb; 
             Initial Catalog=4Arctic4;Integrated Security=true");
             base.OnConfiguring(optionsBuilder);
+        }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            //wehed menhom yekhdem mech ezouz    
+            
+            base.OnModelCreating(modelBuilder);
+            // 1ere methode avec classe de configuration
+           // modelBuilder.ApplyConfiguration(new PlaneConfiguration());
+
+            // 2eme methode sans classe de configuration
+            modelBuilder.Entity<Plane>().
+                ToTable("MyPlanes").
+                Property(p => p.Capacity).
+                HasColumnName("PlaneCapacity");
+            modelBuilder.Entity<Plane>().
+                HasKey(p => p.PlaneId)
+
+            ;
+
+            modelBuilder.ApplyConfiguration(new FlightConfiguration());
         }
 
     }

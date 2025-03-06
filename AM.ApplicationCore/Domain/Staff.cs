@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -11,6 +12,7 @@ namespace AM.ApplicationCore.Domain
     {
         public DateTime EmployementDate { get; set; }
         public string Function { get; set; }
+        [DataType(DataType.Currency)]
         public double Salary { get; set; }
 
         public override void passengertype()
