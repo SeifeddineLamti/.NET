@@ -21,8 +21,8 @@ Console.WriteLine("------------------------------");
 fm.DestinationGroupedFlights();
 
 Console.WriteLine("------------------------------");
-Passenger p1 = new Passenger { FirstName = "seif", LastName = "lamti" };
+Passenger p1 = new Passenger { FullName= new FullName {FirstName="seif",LastName="lamzi" } };
 p1.UpperFullName();
-Console.WriteLine(p1.LastName);
-Console.WriteLine(p1.FirstName);
+Console.WriteLine(p1.FullName.LastName);
+Console.WriteLine(p1.FullName.LastName);
   
